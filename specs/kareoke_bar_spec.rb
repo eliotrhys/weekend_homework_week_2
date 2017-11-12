@@ -1,0 +1,28 @@
+require('minitest/autorun')
+require('minitest/rg')
+require_relative('../kareoke_bar.rb')
+require_relative('../room.rb')
+require_relative('../guest.rb')
+
+class TestKareokeBar < MiniTest::Test
+
+  def setup
+    @kareoke_bar = KareokeBar.new("Eliot's Kareoke Emporium")
+
+    @classic_room = Room.new("Classic Room")
+    @pop_room = Room.new("Pop Room")
+    @rock_room = Room.new("Rock Room")
+  end
+
+  def test_add_room
+    @kareoke_bar.add_room(@classic_room)
+    assert_equal(@kareoke_bar.number_of_rooms.count, 1)
+  end
+
+  def test_remove_room
+    @kareoke_bar.add_room(@classic_room)
+    @kareoke_bar.number_of_rooms.pop
+    assert_equal(@kareoke_bar.number_of_rooms.count, 0)
+  end
+
+end
