@@ -64,6 +64,13 @@ class TestRoom < MiniTest::Test
     assert_equal("Whoo!", value)
   end
 
+  def test_favourite_song_false
+    @pop_room.add_guest_to_room(@dave)
+    @pop_room.add_song_to_song_list(@my_way)
+    @pop_room.play_song(@my_way)
+    value = @pop_room.favourite_song(@dave, @my_way)
+    assert_equal(value, nil)
+  end
 
 
 

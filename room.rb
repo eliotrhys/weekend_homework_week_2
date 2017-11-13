@@ -38,6 +38,8 @@ class Room
   def favourite_song(guest, song)
     if song.title == guest.favourite_song
       return "Whoo!"
+    else
+      return nil
     end
   end
 
