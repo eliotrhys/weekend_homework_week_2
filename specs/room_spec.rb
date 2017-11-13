@@ -16,10 +16,10 @@ class TestRoom < MiniTest::Test
     @hit_me_baby = Song.new("Hit Me Baby One More Time", "Britney Spears", "Pop")
     @the_pretender = Song.new("The Pretender", "Foo Fighters", "Rock")
 
-    @sarah = Guest.new("Sarah", "My Way")
-    @dave = Guest.new("Dave", "Hit Me Baby One More Time")
-    @roger = Guest.new("Roger", "The Pretender")
-    @mike = Guest.new("Mike", "The Pretender")
+    @sarah = Guest.new("Sarah", "My Way", 500)
+    @dave = Guest.new("Dave", "Hit Me Baby One More Time", 300)
+    @roger = Guest.new("Roger", "The Pretender", 200)
+    @mike = Guest.new("Mike", "The Pretender", 150)
 
   end
 
