@@ -12,6 +12,8 @@ class TestKareokeBar < MiniTest::Test
     @classic_room = Room.new("Classic Room")
     @pop_room = Room.new("Pop Room")
     @rock_room = Room.new("Rock Room")
+
+    @roger = Guest.new("Roger", "The Pretender", 250)
   end
 
   def test_add_room
@@ -25,4 +27,13 @@ class TestKareokeBar < MiniTest::Test
     assert_equal(@kareoke_bar.number_of_rooms.count, 0)
   end
 
+  def test_add_money_to_till
+    @kareoke_bar.add_money_to_till(10)
+    assert_equal(@kareoke_bar.till, 510)
+  end
+
+  def test_charge_customer_entry
+    @kareoke_bar.charge_customer_entry(@roger)
+    assert_equal(@roger.wallet, 200)
+  end
 end
